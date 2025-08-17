@@ -1,14 +1,16 @@
-const { PermissionsBitField, SlashCommandBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 
 module.exports = {
-    data: new SlashCommandBuilder()
-        .setName('r')
-        .setDescription('Zmienia nazwę aktualnego kanału.')
-        .addStringOption(option =>
-            option.setName('nazwa')
-                .setDescription('Nowa nazwa kanału')
-                .setRequired(true)
-        ),
+    name: 'r',
+    description: 'Zmienia nazwę aktualnego kanału.',
+    options: [
+        {
+            name: 'nazwa',
+            description: 'Nowa nazwa kanału',
+            type: 3,
+            required: true
+        }
+    ],
 
     async execute(interaction) {
         if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {

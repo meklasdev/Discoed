@@ -229,7 +229,7 @@ module.exports = {
                         roleID = '1382630829561217085';
                         break;
                     case 'fivem':
-                        categoryID = '1382630830802731030';
+                        categoryID = '1382630830802731036';
                         roleID = '1382630829561217082';
                         break;
                     case 'red':
@@ -385,7 +385,8 @@ module.exports = {
                             .setColor('#6f21ff');
                     }
 
-                    const content = '@everyone';
+                    // Only ping @everyone for purchase tickets, not support tickets
+                    const content = (ticketCategory === 'support' || ticketCategory === 'free keys') ? '' : '@everyone';
 
                     const botPerms = ticketChannel.permissionsFor(interaction.guild.members.me);
                     if (botPerms && botPerms.has(PermissionsBitField.Flags.SendMessages) && botPerms.has(PermissionsBitField.Flags.EmbedLinks)) {
