@@ -84,7 +84,7 @@ module.exports = {
         const licencja = interaction.options.getString('licencja') || 'lifetime';
         const platnosc = ticketData.payment;
 
-        const repMessage = `+rep <@${config.REP_USER_ID}> x${ilosc} ${produkt} ${licencja} [${platnosc}]`;
+        const repMessage = `+rep <@${interaction.user.id}> x${ilosc} ${produkt} ${licencja} [${platnosc}]`;
 
         const finalEmbed = new EmbedBuilder()
             .setColor('#6f21ff')
