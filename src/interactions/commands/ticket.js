@@ -30,8 +30,7 @@ module.exports = {
                 { name: 'unicore', value: 'unicore' },
                 { name: 'zefirotemp', value: 'zefirotemp' },
                 { name: 'susano', value: 'susano' },
-                { name: 'unicore-marvels', value: 'unicore-marvels' },
-                { name: 'applications', value: 'applications' }
+                { name: 'unicore-marvels', value: 'unicore-marvels' }
             ],
             required: true,
         }
@@ -621,23 +620,22 @@ module.exports = {
             case 'support':
                 embed = new EmbedBuilder()
                     .setDescription(`
-# <:ticket:1401226055867433041> Tickets
+# <:support:1358051188758806579> Support <:support:1358051188758806579>
 
-> - <:support:1358051188758806579> **Support** - If you have a problem with a purchased product or want to ask a question.
-> - <:silent:1395058293432516658> **Media Creator** - If you want us to be your sponsor
+ **Hi, Click to open ticket on** <:support:1358051188758806579>
 
--# <:emoji22:1365678264789635122> Before opening the ticket, please read the https://discord.com/channels/1382630829536182302/1382630832510074943
-                    `)
+> <a:arrowpurple:1358514479561965599>  **important | **
++- **Do not open the ticket if you want to ask about free cheats <:legit:1358050707139330050>**
++- **after opening it, write what it is about <:legit:1358050707139330050>**
++- **If you want buy, open ticket on channel product <:legit:1358050707139330050>**
+`)
                     .setColor('#6f21ff')
-                    .setImage('https://media.discordapp.net/attachments/1382630836171706431/1384617473176895609/image.png?ex=68a57ac2&is=68a42942&hm=1ed8e06a15abfb3e465b68d909f97a3e0877c7f79e413d81bf348d724b6e557a&=&format=webp&quality=lossless');
-                selectRow = new ActionRowBuilder().addComponents(
-                    new StringSelectMenuBuilder()
-                        .setCustomId('applications')
-                        .setPlaceholder('🎫 Wybierz rodzaj podania')
-                        .addOptions([
-                            { label: 'Support', description: 'Masz problem lub pytanie', value: 'support_application', emoji: '<:support:1358051188758806579>' },
-                            { label: 'Media Creator', description: 'Chcesz, abyśmy byli Twoim sponsorem', value: 'media_application', emoji: '<:silent:1395058293432516658>' }
-                        ])
+                    .setImage('https://media.discordapp.net/attachments/1382630836171706431/1384617473176895609/image.png?ex=68531502&is=6851c382&hm=871cd32645f4540f2300d7050d3344acbeecc67523ee186ef0036775a438c3aa&=&format=webp&quality=lossless');
+                row = new ActionRowBuilder().addComponents(
+                    new ButtonBuilder()
+                        .setCustomId(`ticket_support`)
+                        .setEmoji(`<:support:1358051188758806579>`)
+                        .setStyle(ButtonStyle.Secondary)
                 );
                 break;
             case 'freekeys':
@@ -871,38 +869,6 @@ Wybierz powód odbioru klucza z menu poniżej.
                         .setCustomId(`ticket_unicore-marvels`)
                         .setEmoji(`<:UNIRIVALS:1381993556905824438>`)
                         .setStyle(ButtonStyle.Secondary)
-                );
-                break;
-            case 'applications':
-                embed = new EmbedBuilder()
-                    .setDescription(`
-# <:ticket:1401226055867433041> Tickets
-
-> - <:support:1358051188758806579> **Support** - If you have a problem with a purchased product or want to ask a question.
-> - <:silent:1395058293432516658> **Media Creator** - If you want us to be your sponsor
-
--# <:emoji22:1365678264789635122> Before opening the ticket, please read the https://discord.com/channels/1382630829536182302/1382630832510074943
-`)
-                    .setColor('#6f21ff')
-                    .setImage('https://media.discordapp.net/attachments/1382630836171706431/1384617473176895609/image.png?ex=68a57ac2&is=68a42942&hm=1ed8e06a15abfb3e465b68d909f97a3e0877c7f79e413d81bf348d724b6e557a&=&format=webp&quality=lossless');
-                selectRow = new ActionRowBuilder().addComponents(
-                    new StringSelectMenuBuilder()
-                        .setCustomId('applications')
-                        .setPlaceholder('🎫 Wybierz rodzaj podania')
-                        .addOptions([
-                            {
-                                label: 'Podanie na Media',
-                                description: 'Aplikacja dla twórców contentu',
-                                value: 'media_application',
-                                emoji: '<:silent:1395058293432516658>'
-                            },
-                            {
-                                label: 'Podanie na Support',
-                                description: 'Aplikacja do zespołu wsparcia',
-                                value: 'support_application',
-                                emoji: '<:support:1358051188758806579>'
-                            }
-                        ])
                 );
                 break;
         }

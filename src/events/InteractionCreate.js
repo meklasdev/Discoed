@@ -517,6 +517,19 @@ module.exports = {
                 console.error(error);
                 await interaction.reply({ content: 'Wystąpił błąd podczas obsługi select menu.', flags: 64 });
             }
+        } else if (interaction.isButton()) {
+            // New ticket controls
+            if (interaction.customId.startsWith('newticket_')) {
+                const button = client.buttons.get('newticket_controls');
+                if (button) {
+                    try {
+                        await button.execute(interaction);
+                    } catch (error) {
+                        console.error(error);
+                        await interaction.reply({ content: 'Błąd przy obsłudze przycisków ticketów.', flags: 64 });
+                    }
+                }
+            }
         }
     },
 };
