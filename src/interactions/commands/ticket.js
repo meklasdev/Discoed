@@ -30,7 +30,8 @@ module.exports = {
                 { name: 'unicore', value: 'unicore' },
                 { name: 'zefirotemp', value: 'zefirotemp' },
                 { name: 'susano', value: 'susano' },
-                { name: 'unicore-marvels', value: 'unicore-marvels' }
+                { name: 'unicore-marvels', value: 'unicore-marvels' },
+                { name: 'applications', value: 'applications' }
             ],
             required: true,
         }
@@ -124,7 +125,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('fg_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your FG Bypass Option')
+                        .setPlaceholder('🎫 Choose Your FG Bypass Option')
                         .addOptions([
                             {
                                 label: 'Lifetime Access - €3.5 / 15 PLN',
@@ -163,7 +164,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('hx_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your HX Software Plan')
+                        .setPlaceholder('🎫 Choose Your HX Software Plan')
                         .addOptions([
                             {
                                 label: 'Daily Trial - €5 / 20 PLN',
@@ -213,7 +214,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('ipvanish_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your VPN Package')
+                        .setPlaceholder('🎫 Choose Your VPN Package')
                         .addOptions([
                             {
                                 label: '1 Year VPN - €1.5 / 6.5 PLN',
@@ -272,7 +273,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('ventiq_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your Ventiq Plan')
+                        .setPlaceholder('🎫 Choose Your Ventiq Plan')
                         .addOptions([
                             {
                                 label: 'Monthly Plan - €9.99 / 42 PLN',
@@ -445,7 +446,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('fivem_ready_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your FiveM Package')
+                        .setPlaceholder('🎫 Choose Your FiveM Package')
                         .addOptions([
                             {
                                 label: 'Single Account - €0.23 / 1 PLN',
@@ -491,7 +492,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('red_engine_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your Red Engine License')
+                        .setPlaceholder('🎫 Choose Your Red Engine License')
                         .addOptions([
                             {
                                 label: 'Weekly Plan - €13,99 / 57 PLN',
@@ -828,7 +829,7 @@ Wybierz powód odbioru klucza z menu poniżej.
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_susano`)
-                        .setEmoji(`1381990556426702951`)
+                        .setEmoji(`<:susano:1381990556426702951>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 break;
@@ -867,8 +868,29 @@ Wybierz powód odbioru klucza z menu poniżej.
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_unicore-marvels`)
-                        .setEmoji(`1381993556905824438`)
+                        .setEmoji(`<:UNIRIVALS:1381993556905824438>`)
                         .setStyle(ButtonStyle.Secondary)
+                );
+                break;
+            case 'applications':
+                embed = new EmbedBuilder()
+                    .setDescription(`
+# 🎫 Aplikacje
+
+Wybierz rodzaj podania z menu poniżej.
+
+> <a:arrowpurple:1358514479561965599> Media: linki do kanałów + dlaczego Ty + wizja na content
+> <a:arrowpurple:1358514479561965599> Support: dlaczego Ty
+`)
+                    .setColor('#6f21ff');
+                selectRow = new ActionRowBuilder().addComponents(
+                    new StringSelectMenuBuilder()
+                        .setCustomId('applications')
+                        .setPlaceholder('🎫 Wybierz rodzaj podania')
+                        .addOptions([
+                            { label: 'Podanie na Media', description: 'Aplikacja dla twórców contentu', value: 'media_application', emoji: '🎥' },
+                            { label: 'Podanie na Support', description: 'Aplikacja do zespołu wsparcia', value: 'support_application', emoji: '🛠️' }
+                        ])
                 );
                 break;
         }

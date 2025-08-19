@@ -31,7 +31,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('fivem_ready_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your FiveM Package')
+                        .setPlaceholder('🎫 Choose Your FiveM Package')
                         .addOptions([
                             {
                                 label: 'Single Account - €0.23 / 1 PLN',
@@ -73,7 +73,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('steam_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your Steam Package')
+                        .setPlaceholder('🎫 Choose Your Steam Package')
                         .addOptions([
                             {
                                 label: 'Steam Account - €0.03 / 0.10 PLN',
@@ -110,7 +110,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('discord_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your Discord Package')
+                        .setPlaceholder('🎫 Choose Your Discord Package')
                         .addOptions([
                             {
                                 label: 'Email Verified - €0.15 / 0.65 PLN',
@@ -156,7 +156,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('ipvanish_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your VPN Package')
+                        .setPlaceholder('🎫 Choose Your VPN Package')
                         .addOptions([
                             {
                                 label: 'IP Vanish - €1.5 / 6.5 PLN',

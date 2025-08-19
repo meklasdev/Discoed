@@ -30,7 +30,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()                    
                         .setCustomId(`ticket_fivem`)
-                        .setEmoji(`1358050363332231268`)
+                        .setEmoji(`<:Rockstar:1382655702606151680>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 
@@ -76,7 +76,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_steam`)
-                        .setEmoji(`1358048490571173989`)
+                        .setEmoji(`<:Steam:1382653631488200754>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 
@@ -118,7 +118,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_discord`)
-                        .setEmoji(`1358048371083837501`)
+                        .setEmoji(`<:DISCORD:1382653651214012477>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 
@@ -167,7 +167,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_ipvanish`)
-                        .setEmoji(`1359436765315727432`)
+                        .setEmoji(`<:IPVANISH:1359436765315727432>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 
