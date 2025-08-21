@@ -124,7 +124,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('fg_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your FG Bypass Option')
+                        .setPlaceholder('🎫 Choose Your FG Bypass Option')
                         .addOptions([
                             {
                                 label: 'Lifetime Access - €3.5 / 15 PLN',
@@ -163,7 +163,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('hx_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your HX Software Plan')
+                        .setPlaceholder('🎫 Choose Your HX Software Plan')
                         .addOptions([
                             {
                                 label: 'Daily Trial - €5 / 20 PLN',
@@ -213,7 +213,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('ipvanish_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your VPN Package')
+                        .setPlaceholder('🎫 Choose Your VPN Package')
                         .addOptions([
                             {
                                 label: '1 Year VPN - €1.5 / 6.5 PLN',
@@ -272,7 +272,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('ventiq_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your Ventiq Plan')
+                        .setPlaceholder('🎫 Choose Your Ventiq Plan')
                         .addOptions([
                             {
                                 label: 'Monthly Plan - €9.99 / 42 PLN',
@@ -445,7 +445,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('fivem_ready_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your FiveM Package')
+                        .setPlaceholder('🎫 Choose Your FiveM Package')
                         .addOptions([
                             {
                                 label: 'Single Account - €0.23 / 1 PLN',
@@ -491,7 +491,7 @@ module.exports = {
                 selectRow = new ActionRowBuilder().addComponents(
                     new StringSelectMenuBuilder()
                         .setCustomId('red_engine_tickets')
-                        .setPlaceholder(':ticket~1: Choose Your Red Engine License')
+                        .setPlaceholder('🎫 Choose Your Red Engine License')
                         .addOptions([
                             {
                                 label: 'Weekly Plan - €13,99 / 57 PLN',
@@ -625,9 +625,9 @@ module.exports = {
  **Hi, Click to open ticket on** <:support:1358051188758806579>
 
 > <a:arrowpurple:1358514479561965599>  **important | **
-- **Do not open the ticket if you want to ask about free cheats <:legit:1358050707139330050>**
-- **after opening it, write what it is about <:legit:1358050707139330050>**
-- **If you want buy, open ticket on channel product <:legit:1358050707139330050>**
++- **Do not open the ticket if you want to ask about free cheats <:legit:1358050707139330050>**
++- **after opening it, write what it is about <:legit:1358050707139330050>**
++- **If you want buy, open ticket on channel product <:legit:1358050707139330050>**
 `)
                     .setColor('#6f21ff')
                     .setImage('https://media.discordapp.net/attachments/1382630836171706431/1384617473176895609/image.png?ex=68531502&is=6851c382&hm=871cd32645f4540f2300d7050d3344acbeecc67523ee186ef0036775a438c3aa&=&format=webp&quality=lossless');
@@ -828,7 +828,7 @@ Wybierz powód odbioru klucza z menu poniżej.
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_susano`)
-                        .setEmoji(`1381990556426702951`)
+                        .setEmoji(`<:susano:1381990556426702951>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 break;
@@ -867,7 +867,7 @@ Wybierz powód odbioru klucza z menu poniżej.
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_unicore-marvels`)
-                        .setEmoji(`1381993556905824438`)
+                        .setEmoji(`<:UNIRIVALS:1381993556905824438>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 break;

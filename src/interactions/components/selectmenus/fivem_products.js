@@ -102,7 +102,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_keyser`)
-                        .setEmoji(`1403055568461103134`)
+                        .setEmoji(`<:keyser:1403055568461103134>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 
@@ -164,7 +164,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_unicore`)
-                        .setEmoji(`1359425889208631459`)
+                        .setEmoji(`<:unicloud:1382655674202198028>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 
@@ -227,7 +227,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_hx`)
-                        .setEmoji(`1359520884511211650`)
+                        .setEmoji(`<:hx:1359520884511211650>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 
@@ -295,7 +295,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_tiago`)
-                        .setEmoji(`1358051116868178104`)
+                        .setEmoji(`<:tiagomodz_logo:1358051116868178104>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 
@@ -359,7 +359,7 @@ module.exports = {
                 row = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
                         .setCustomId(`ticket_macho`)
-                        .setEmoji(`1358051351246012599`)
+                        .setEmoji(`<:MachoLogo:1358051351246012599>`)
                         .setStyle(ButtonStyle.Secondary)
                 );
                 

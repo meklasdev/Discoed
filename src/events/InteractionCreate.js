@@ -40,6 +40,70 @@ module.exports = {
                 let license = null;
 
                 switch (ticketCategory) {
+                    case 'media application': {
+                        const channels = interaction.fields.getTextInputValue('channels');
+                        const why = interaction.fields.getTextInputValue('why');
+                        const vision = interaction.fields.getTextInputValue('vision');
+
+                        embed = new EmbedBuilder()
+                            .setDescription(`
+## <:silent:1395058293432516658> Silent Maf1a × TICKET
+### <:3861memberpurple:1384624101351620658> × ***Customer Informations:***
+> <:3124memberwhiteblack:1384624130682519673> × **Ping:** ${interaction.member}
+> <:3124memberwhiteblack:1384624130682519673> × **Nick:** ${interaction.user.username}
+> <:3124memberwhiteblack:1384624130682519673> × **ID:** ${interaction.member.id}
+### <:ogl:1382655256256843818> × ***Application Details:***
+> <:9847public:1384624242800459796> × Category: **${formattedCategory}**
+
+> <:2141file:1384624277122449510> × Channels: **${channels}**
+> <:2141file:1384624277122449510> × Why you: **${why}**
+> <:2141file:1384624277122449510> × Vision: **${vision}**
+                        `)
+                            .setColor('#6f21ff');
+                        row = new ActionRowBuilder().addComponents(
+                            new StringSelectMenuBuilder()
+                                .setCustomId('settings_support')
+                                .setPlaceholder('❌ | Nie wybrałeś/aś żadnej opcji.')
+                                .addOptions([
+                                    { label: 'Przejmij', emoji: '<:43565member:1359180336214310916>', description: 'Jeśli chcesz przejąć ten ticket, kliknij tutaj.', value: 'claim' },
+                                    { label: 'Zamknij', emoji: '<:emoji58:1365678186792489140>', description: 'Jeśli chcesz zamknąć ten ticket, kliknij tutaj.', value: 'close' },
+                                    { label: 'Dodaj osobę', emoji: '<:3124memberwhiteblack:1384624130682519673>', description: 'Jeśli chcesz dodać osobę do tego ticketu, kliknij tutaj.', value: 'adduser' },
+                                    { label: 'Usuń osobę', emoji: '<:3124memberwhiteblack:1384624130682519673>', description: 'Jeśli chcesz usunąć osobę z tego ticketu, kliknij tutaj.', value: 'removeuser' },
+                                    { label: 'Powiadom', emoji: '<:emoji22:1365678264789635122>', description: 'Jeśli chcesz powiadomić klienta, kliknij tutaj.', value: 'notify' }
+                                ])
+                        );
+                        break;
+                    }
+                    case 'support application': {
+                        const why = interaction.fields.getTextInputValue('why');
+
+                        embed = new EmbedBuilder()
+                            .setDescription(`
+## <:silent:1395058293432516658> Silent Maf1a × TICKET
+### <:3861memberpurple:1384624101351620658> × ***Customer Informations:***
+> <:3124memberwhiteblack:1384624130682519673> × **Ping:** ${interaction.member}
+> <:3124memberwhiteblack:1384624130682519673> × **Nick:** ${interaction.user.username}
+> <:3124memberwhiteblack:1384624130682519673> × **ID:** ${interaction.member.id}
+### <:ogl:1382655256256843818> × ***Application Details:***
+> <:9847public:1384624242800459796> × Category: **${formattedCategory}**
+
+> <:2141file:1384624277122449510> × Why you: **${why}**
+                        `)
+                            .setColor('#6f21ff');
+                        row = new ActionRowBuilder().addComponents(
+                            new StringSelectMenuBuilder()
+                                .setCustomId('settings_support')
+                                .setPlaceholder('❌ | Nie wybrałeś/aś żadnej opcji.')
+                                .addOptions([
+                                    { label: 'Przejmij', emoji: '<:43565member:1359180336214310916>', description: 'Jeśli chcesz przejąć ten ticket, kliknij tutaj.', value: 'claim' },
+                                    { label: 'Zamknij', emoji: '<:emoji58:1365678186792489140>', description: 'Jeśli chcesz zamknąć ten ticket, kliknij tutaj.', value: 'close' },
+                                    { label: 'Dodaj osobę', emoji: '<:3124memberwhiteblack:1384624130682519673>', description: 'Jeśli chcesz dodać osobę do tego ticketu, kliknij tutaj.', value: 'adduser' },
+                                    { label: 'Usuń osobę', emoji: '<:3124memberwhiteblack:1384624130682519673>', description: 'Jeśli chcesz usunąć osobę z tego ticketu, kliknij tutaj.', value: 'removeuser' },
+                                    { label: 'Powiadom', emoji: '<:emoji22:1365678264789635122>', description: 'Jeśli chcesz powiadomić klienta, kliknij tutaj.', value: 'notify' }
+                                ])
+                        );
+                        break;
+                    }
                     case 'support':
                     case 'free keys':
                         const supportReason = interaction.fields.getTextInputValue('reason');
@@ -93,88 +157,6 @@ module.exports = {
                                     }
                                 ])
                         );
-                        break;
-                    case 'other':
-                        const otherReason = interaction.fields.getTextInputValue('reason');
-
-                        embed = new EmbedBuilder()
-                            .setDescription(`
-## <:silent:1395058293432516658> Silent Maf1a × TICKET
-### <:3861memberpurple:1384624101351620658> × ***Customer Informations:***
-> <:3124memberwhiteblack:1384624130682519673> × **Ping:** ${interaction.member}
-> <:3124memberwhiteblack:1384624130682519673> × **Nick:** ${interaction.user.username}
-> <:3124memberwhiteblack:1384624130682519673> × **ID:** ${interaction.member.id}
-### <:ogl:1382655256256843818> × ***Order Informations:***
-> <:9847public:1384624242800459796> × Category: **${formattedCategory}**
-
-> <:2141file:1384624277122449510> × Why you create a ticket: **${otherReason}**
-                        `);
-                        break;
-                    case 'steam':
-                        const steamAmount = interaction.fields.getTextInputValue('amount');
-                        const steamPayment = interaction.fields.getTextInputValue('payment');
-                        paymentValue = steamPayment;
-
-                        embed = new EmbedBuilder()
-                            .setDescription(`
-## <:silent:1395058293432516658> Silent Maf1a × TICKET
-### <:3861memberpurple:1384624101351620658> × ***Customer Informations:***
-> <:3124memberwhiteblack:1384624130682519673> × **Ping:** ${interaction.member}
-> <:3124memberwhiteblack:1384624130682519673> × **Nick:** ${interaction.user.username}
-> <:3124memberwhiteblack:1384624130682519673> × **ID:** ${interaction.member.id}
-### <:ogl:1382655256256843818> × ***Order Informations:***
-> <:9847public:1384624242800459796> × Category: **${formattedCategory}**
-
-> <:2141file:1384624277122449510> × Amount: **${steamAmount}**
-> <:2141file:1384624277122449510> × Payment: **${steamPayment}**
-                        `);
-                        break;
-                    case 'fivem':
-                        const fivemPayment = interaction.fields.getTextInputValue('payment');
-                        paymentValue = fivemPayment;
-
-                        embed = new EmbedBuilder()
-                            .setDescription(`
-## <:silent:1395058293432516658> Silent Maf1a × TICKET
-### <:3861memberpurple:1384624101351620658> × ***Customer Informations:***
-> <:3124memberwhiteblack:1384624130682519673> × **Ping:** ${interaction.member}
-> <:3124memberwhiteblack:1384624130682519673> × **Nick:** ${interaction.user.username}
-> <:3124memberwhiteblack:1384624130682519673> × **ID:** ${interaction.member.id}
-### <:ogl:1382655256256843818> × ***Order Informations:***
-> <:9847public:1384624242800459796> × Category: **${formattedCategory}**
-
-> <:2141file:1384624277122449510> × Payment: **${fivemPayment}**
-                        `);
-                        break;
-                    default:
-                        license = interaction.fields.getTextInputValue('license');
-                        const payment = interaction.fields.getTextInputValue('payment');
-                        paymentValue = payment;
-
-                        embed = new EmbedBuilder()
-                            .setDescription(`
-## <:silent:1395058293432516658> Silent Maf1a × TICKET
-### <:3861memberpurple:1384624101351620658> × ***Customer Informations:***
-> <:3124memberwhiteblack:1384624130682519673> × **Ping:** ${interaction.member}
-> <:3124memberwhiteblack:1384624130682519673> × **Nick:** ${interaction.user.username}
-> <:3124memberwhiteblack:1384624130682519673> × **ID:** ${interaction.member.id}
-### <:ogl:1359180323715420312> × ***Order Informations:***
-> <:9847public:1384624242800459796> × Category: **${formattedCategory}**
-
-> <:2141file:1384624277122449510> × License: **${license}**
-> <:2141file:1384624277122449510> × Payment: **${payment}**
-                        `);
-                        if (payment.toUpperCase() === 'BLIK') {
-                            paymentEmbed = new EmbedBuilder()
-                                .setDescription(`
-# <:emoji22:1384624497784656035> Czesc!
--# Widze, ze placisz blikiem <:BLIK:1376266853118119946>, a wiec: 
-> ***Przelej na numer:*** **\`577 774 646\`**
-> ***Opis:*** \`Od [Nick]\`
-- **Nastepnie napisz nam ze przelales i czekaj cierpliwie na swoj produkt <:legit:1348050426666156162>**
-                                `)
-                                .setColor('#6f21ff');
-                        }
                         break;
                 }
 
@@ -268,6 +250,14 @@ module.exports = {
                         categoryID = '1382630835576111175';
                         roleID = '1382630829552963591';
                         break;
+                    case 'media application':
+                        categoryID = '1382630835576111175';
+                        roleID = '1382630829552963591';
+                        break;
+                    case 'support application':
+                        categoryID = '1382630835576111175';
+                        roleID = '1382630829552963591';
+                        break;
                     case 'tiago':
                         categoryID = '1382630830064668686';
                         roleID = '1382630829561217083';
@@ -313,7 +303,7 @@ module.exports = {
                     }
                 ];
 
-                if (ticketCategory === 'support' || ticketCategory === 'free keys') {
+                if (ticketCategory === 'support' || ticketCategory === 'free keys' || ticketCategory === 'media application' || ticketCategory === 'support application') {
                     permissionOverwrites.push({
                         id: '1382630829552963590',
                         allow: [PermissionsBitField.Flags.ViewChannel, PermissionsBitField.Flags.ManageMessages, PermissionsBitField.Flags.AttachFiles, PermissionsBitField.Flags.ReadMessageHistory, PermissionsBitField.Flags.SendMessages]
@@ -386,7 +376,7 @@ module.exports = {
                     }
 
                     // Only ping @everyone for purchase tickets, not support tickets
-                    const content = (ticketCategory === 'support' || ticketCategory === 'free keys') ? '' : '@everyone';
+                    const content = (ticketCategory === 'support' || ticketCategory === 'free keys' || ticketCategory === 'media application' || ticketCategory === 'support application') ? '' : '@everyone';
 
                     const botPerms = ticketChannel.permissionsFor(interaction.guild.members.me);
                     if (botPerms && botPerms.has(PermissionsBitField.Flags.SendMessages) && botPerms.has(PermissionsBitField.Flags.EmbedLinks)) {
@@ -430,7 +420,7 @@ module.exports = {
                     .setCustomId(interaction.customId)
                     .setTitle('Creating Ticket');
 
-                    switch (ticketCategory) {
+                switch (ticketCategory) {
                     case 'support':
                     case 'free keys':
                     case 'other':
@@ -526,6 +516,19 @@ module.exports = {
             } catch (error) {
                 console.error(error);
                 await interaction.reply({ content: 'Wystąpił błąd podczas obsługi select menu.', flags: 64 });
+            }
+        } else if (interaction.isButton()) {
+            // New ticket controls
+            if (interaction.customId.startsWith('newticket_')) {
+                const button = client.buttons.get('newticket_controls');
+                if (button) {
+                    try {
+                        await button.execute(interaction);
+                    } catch (error) {
+                        console.error(error);
+                        await interaction.reply({ content: 'Błąd przy obsłudze przycisków ticketów.', flags: 64 });
+                    }
+                }
             }
         }
     },
